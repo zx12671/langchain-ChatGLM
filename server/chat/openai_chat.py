@@ -31,8 +31,8 @@ async def openai_chat(msg: OpenAiChatMsgIn):
 
     async def get_response(msg):
         data = msg.dict()
-        data["streaming"] = True
-        data.pop("stream")
+        # data["stream"] = False
+        # data.pop("stream")
 
         try:
             response = openai.ChatCompletion.create(**data)
